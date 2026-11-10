@@ -82,7 +82,7 @@ Dẫn tới file kết quả: [outputs/annotation_evaluation.json](../../outputs
 |---|---|---|---|
 | Khởi tạo dữ liệu trên CVAT | Nhãn bị đảo thứ tự (bus=0, car=1, truck=2, van=3) | Viết script Python tự động remap lại class ID theo đúng `data.yaml` | Đạt chuẩn 50/50 file cấu trúc YOLO |
 | Gold QC lần 1 | F1 chỉ đạt 0.6404 do False Positive cao (315 box) | Rà soát các ảnh lệch nhiều, lọc bỏ xe li ti $< 15\text{ px}$ ở hậu cảnh xa và sửa nhãn van | F1 tăng lên **0.8087**, Mean IoU đạt **0.9180** (Passed) |
-| Colab Runtime | Colab báo hết GPU quota | Sử dụng runtime CPU hoặc đổi tài khoản Colab có GPU | Train hoàn tất 50 epochs và xuất file `day2_colab_outputs.zip` |
+| Colab Runtime (01:00 AM) | Máy chủ Colab lúc 1h sáng báo lỗi không gán được GPU ("Không có phần phụ trợ nào có sẵn GPU") do nghẽn server/hết quota | Dùng Antigravity tư vấn phương án chạy CPU và đổi tài khoản Google để tiếp tục cấp phát GPU | Train hoàn tất 50 epochs trên Colab, xuất đầy đủ `day2_colab_outputs.zip` |
 
 ## 7. Tự đánh giá theo rubric
 
@@ -97,5 +97,5 @@ Dẫn tới file kết quả: [outputs/annotation_evaluation.json](../../outputs
 
 ## 8. Công cụ AI và tài liệu tham khảo
 
-- Công cụ AI: Sử dụng Antigravity Assistant hỗ trợ kiểm tra cấu trúc nhãn, tính toán ma trận tương quan giữa các nhãn và phân tích nguyên nhân lỗi đánh giá mô hình. Học viên tự rà soát, kiểm tra trực quan từng ảnh trên CVAT và chịu trách nhiệm toàn bộ về nhãn nộp.
+- Công cụ AI: Sử dụng Antigravity Assistant để confirm các thuật ngữ kỹ thuật trong schema, check chéo và đối chiếu các ảnh ban đầu, kiểm tra cấu trúc định dạng YOLO và phân tích nguyên nhân lỗi đánh giá mô hình. Học viên tự rà soát, kiểm tra trực quan từng ảnh trên CVAT và chịu trách nhiệm toàn bộ về nhãn nộp.
 - Tài liệu tham khảo: Khung tài liệu bài học Day 2 (RULES.md, GUIDE.md, RUBRIC.md, SUBMISSION.md), tài liệu Ultralytics YOLO26.
